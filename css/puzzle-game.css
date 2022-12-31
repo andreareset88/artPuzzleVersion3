@@ -1,0 +1,241 @@
+.popup {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.popup .popupText {
+    visibility: hidden;
+    width: 260px;
+    background-color: #555;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 8px 0;
+    position: absolute;
+    z-index: 1;
+    bottom: 125%;
+    left: 50%;
+    margin-left: -80px;
+}
+
+.popup .popupText::after{
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: #555 transparent transparent transparent;
+}
+
+.popup .show {
+    visibility: visible;
+    -webkit-animation: fadeIn 1s;
+    animation: fadeIn 1s;
+}
+
+@-webkit-keyframes fadeIn {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+
+@keyframes fadeIn {
+    from {opacity: 0;}
+    to {opacity:1 ;}
+}
+
+/*img {
+    margin: 0 10px;
+}*/
+
+.vl {
+    border-left: 1px solid black;
+    height: 1000px;
+    position: absolute;
+    left: 46%;
+    margin-left: 0px;
+    top: 0;
+}
+
+h2 {
+    font-weight: normal;
+    text-align: center;
+    color: black;
+}
+
+h3 {
+    font-weight: normal;
+    text-align: center;
+    margin: 2px 0;
+}
+
+body {
+    /*font-family: 'Segoe UI', Calibri, Arial;*/
+    font-family: "Copperplate Gothic Bold", fantasy;
+    background-color: #808080;
+    margin: 0;
+}
+
+#collage hr {
+    border: none;
+    border-top: 2px solid #f5f2f2;
+    height: 1px;
+}
+
+#collage #mainPanel {
+    background-color: whitesmoke;
+    padding: 2px 0;
+    margin: 2px auto;
+    width: 99%;
+}
+
+
+#player1 {
+    display: inline-block;
+    width:615px;
+    height:620px;
+    border: 1px solid red;
+}
+#player2 {
+    vertical-align:top;
+    display: inline-block;
+    width:611px;
+    height:620px;
+    border: 1px solid green;
+}
+
+#collage #originalImageBox {
+    display: inline-block;
+    font-size: 0.8em;
+    margin: 1px 1px;
+    vertical-align: top;
+    width: 300px;
+    height: 300px;
+}
+
+#collage #originalImageBoxSecondPlayer {
+    display: inline-block;
+    font-size: 0.8em;
+    /*margin: 1px 10px;*/
+    vertical-align: top;
+    width: 300px;
+    height: 300px;
+}
+
+/*#collage #numStepBox, #collage #currentTimeBox {*/
+/*    display: inline-block;*/
+/*    width: 48%;*/
+/*    text-align: center;*/
+/*}*/
+
+
+#collage #currentTimeBox {
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+/*#collage #numStepBox div {*/
+/*    background-color: #f1580e;*/
+/*    display: inline-block;*/
+/*    padding: 1px 4px;*/
+/*    margin: 0px auto;*/
+/*    max-width: 800px;*/
+/*}*/
+
+#collage img#originalImage {
+    /*border: 2px solid #a46;*/
+    outline: 1px solid black;
+    width: 300px;
+    height: 300px;
+}
+
+#collage img#originalImageSecondPlayer {
+    /*border: 2px solid #a46;*/
+    outline: 1px solid black;
+    width: 300px;
+    height: 300px;
+}
+
+#collage #sortable {
+    border: 2px solid #a46;
+    list-style-type: none;
+    display: inline-block;
+    margin: 1px;
+    padding: 0;
+    float: left;
+    width: 300px;
+    height: 300px;
+}
+
+#collage #sortableSecondPlayer {
+    border: 2px solid #a46;
+    list-style-type: none;
+    display: inline-block;
+    margin: 1px;
+    padding: 0;
+    float: right;
+    width: 300px;
+    height: 300px;
+}
+
+#collage #sortable li, #collage #sortableSecondPlayer li {
+    background-size: 300% 300%;
+    outline: 1px solid black;
+    cursor: pointer;
+    margin: 0;
+    padding: 0;
+    float: left;
+    width: 75px;
+    height: 75px;
+}
+
+
+#collage #fillable, #collage #fillableSecondPlayer {
+    border: 2px solid #a46;
+    list-style-type: none;
+    display: inline-block;
+    margin: 1px;
+    padding: 0;
+    width: 300px;
+    height: 300px;
+}
+
+
+#collage #fillable li, #collage #fillableSecondPlayer li {
+    background-size: 300% 300%;
+    outline: 1px solid black;
+    cursor: pointer;
+    margin: 0;
+    padding: 0;
+    float: left;
+    width: 75px;
+    height: 75px;
+}
+
+
+#collage #buttons {
+    text-align: center;
+    margin-top: 20px;
+}
+
+#collage #numStepBox, #collage #numStepBoxSecondPlayer {
+    text-align: center;
+}
+
+#collage button {
+    background-color: #f5f2f2;
+    border: 1px solid #cce;
+    display: inline;
+    font-family: cursive;
+    font-size: 14px;
+    height: auto;
+    width: auto;
+    padding: 3px 8px;
+}

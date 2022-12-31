@@ -1,0 +1,126 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html lang="en">
+<head>
+    <title></title>
+    <style type="text/css">
+
+        body {
+            background-color: ivory;
+            padding: 10px;
+        }
+
+        #canvas {
+            border: 1px solid red;
+        }
+
+    </style>
+</head>
+
+<body>
+
+<canvas id="canvas" ></canvas>
+<canvas id="canvas2"></canvas>
+
+<script type="text/javascript">
+
+
+    var canvas = document.getElementById("canvas");
+    var ctx = canvas.getContext("2d");
+    var cw = canvas.width;
+    var ch = canvas.height;
+
+    var canvas2 = document.getElementById("canvas2");
+    var ctx2 = canvas2.getContext("2d");
+    var cw2 = canvas2.width;
+    var ch2 = canvas2.height;
+
+    var rows = 4;
+    var cols = 4;
+
+    var img = new Image();
+    var img2 = new Image();
+
+    img.onload = start;
+    img2.onload = start;
+
+    img.src = "./images/David-Resized.jpg";
+    img2.src = "./images/napoleone-Resized.jpg";
+
+    function start() {
+
+        var iw = canvas.width = img.width;
+        var ih = canvas.height = img.height;
+        var pieceWidth = iw / cols;
+        var pieceHeight = ih / rows;
+
+        var iw2 = canvas2.width = img2.width;
+        var ih2 = canvas2.height = img2.height;
+        var pieceWidth2 = iw2 / cols;
+        var pieceHeight2 = ih2 / rows;
+
+        var pieces = [
+            {col: 0, row: 0},
+            {col: 1, row: 0},
+            {col: 2, row: 0},
+            {col: 3, row: 0},
+            {col: 0, row: 1},
+            {col: 1, row: 1},
+            {col: 2, row: 1},
+            {col: 3, row: 1},
+            {col: 0, row: 2},
+            {col: 1, row: 2},
+            {col: 2, row: 2},
+            {col: 3, row: 2},
+            {col: 0, row: 3},
+            {col: 1, row: 3},
+            {col: 2, row: 3},
+            {col: 3, row: 3}
+        ]
+        shuffle(pieces);
+
+        var i = 0;
+        for (var y = 0; y < rows; y++) {
+            for (var x = 0; x < cols; x++) {
+                var p = pieces[i++];
+                ctx.drawImage(
+                    // from the original image
+                    img,
+                    // take the next x,y piece
+                    x * pieceWidth, y * pieceHeight, pieceWidth, pieceHeight,
+                    // draw it on canvas based on the shuffled pieces[] array
+                    p.col * pieceWidth, p.row * pieceHeight, pieceWidth, pieceHeight
+                );
+
+            }
+        }
+
+
+        var j = 0;
+        for (var y = 0; y < rows; y++) {
+            for (var x = 0; x < cols; x++) {
+                var p = pieces[j++];
+
+                ctx2.drawImage(
+                    // from the original image
+                    img2,
+                    // take the next x,y piece
+                    x * pieceWidth2, y * pieceHeight2, pieceWidth2, pieceHeight2,
+                    // draw it on canvas based on the shuffled pieces[] array
+                    p.col * pieceWidth2, p.row * pieceHeight2, pieceWidth2, pieceHeight2
+                );
+            }
+        }
+
+
+    }
+
+    function shuffle(a) {
+        for (var j, x, i = a.length; i; j = Math.floor(Math.random() * i), x = a[--i], a[i] = a[j], a[j] = x) ;
+        return a;
+    }
+
+
+</script>
+
+</body>
+</html>

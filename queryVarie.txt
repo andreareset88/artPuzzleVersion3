@@ -1,0 +1,19 @@
+USE my_artpuzzle;
+DROP TABLE IF EXISTS images;
+CREATE TABLE IF NOT EXISTS images (id INT NOT NULL AUTO_INCREMENT, title VARCHAR(50) NOT NULL, author VARCHAR(30) NOT NULL, date_of_realization DATE NOT NULL, description VARCHAR(500), located_at_path VARCHAR(50),PRIMARY KEY(id));
+
+
+INSERT INTO images(title, author, date_of_realization, description, located_at_path) VALUES ('Statua della Libertà', 'Auguste Bartholdi', '1886-10-28', 'statua costruita a ellis island', 'images/statue-of-libertyResized.jpg');
+
+INSERT INTO images(title, author, date_of_realization, description, located_at_path) VALUES ('Viandante sul mare', 'Caspar David Friedrich', '1818-10-07', 'Uno dei temi del romanticismo è quello del viaggiatore, del senza patria. Il viandante è bello e sventurato, un eroe contemporaneo che non porta su di sé i segni di una bellezza fisica e di una forza classica. Si tratta di un nuovo eroe che è arreso al mondo e al suo destino e si avventura verso il suo futuro drammatico.', 'images/Viandante-sul-mare-resized.jpg');
+
+
+{src: 'images/David-Resized.jpg', title: 'David di Michelangelo'},
+            {src: 'images/statue-of-libertyResized.jpg', title: 'Statua della Libertà'},
+            {src: 'images/napoleone-Resized.jpg', title: 'Napoleone valica le Alpi'},
+            {src: 'images/Urlo-resized.jpg', title: 'Urlo'},
+            {src: 'images/Viandante-sul-mare-resized.jpg', title: 'Viandante sul mare'},
+            {src: 'images/bacio-hayez-resized.jpg', title: 'Il bacio (di Hayez)'},
+            {src: 'images/il-bacio-di-klimt-resized.jpg', title: 'Il bacio (di Klimt)'},
+            {src: 'images/notte-stellata-resized.jpg', title: 'Notte stellata'},
+            {src: 'images/ragazza-orecchino-resized.jpg', title: 'La Ragazza col Turbante'}

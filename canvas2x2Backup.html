@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Img splitter</title>
+    <style>
+        body {
+          background-color: #fff;
+        }
+        img {
+          margin: 0px 10px;
+        }
+    </style>
+</head>
+<body>
+
+<div id="test"></div>
+
+<script type="text/javascript">
+
+  var canvas = document.createElement('canvas');
+  var context = canvas.getContext('2d');
+  var parts = [];
+
+  var img = new Image();
+
+  img.src = "./images/napoleone.jpg"
+
+  img.onload = splitInFourPieces;
+
+  function splitInFourPieces() {
+
+    var widthForEachPiece = img.width / 4;  //300,300
+    var heightForEachPiece = img.height / 4; //225,225
+
+    for (var i=0; i<16; i++){
+      var x = (-widthForEachPiece * i) % (widthForEachPiece * 4);
+      var y = (heightForEachPiece * i) <= heightForEachPiece ? 0 : -heightForEachPiece;
+
+      canvas.width = widthForEachPiece;
+      canvas.height = heightForEachPiece;
+
+      context.drawImage(this, x, y, widthForEachPiece * 4, heightForEachPiece * 4);
+
+      parts.push(canvas.toDataURL());
+      // test
+      var slicedImage = document.createElement('img');
+      slicedImage.src = parts[i];
+
+      var test = document.getElementById('test');
+      var li = document.createElement('li');
+      li.appendChild(slicedImage);
+      test.appendChild(li);
+      //test.appendChild(slicedImage);
+
+    }
+
+
+
+    console.log(parts);
+
+  }
+
+
+</script>
+</body>
+</html>
