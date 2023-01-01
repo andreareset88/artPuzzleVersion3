@@ -148,13 +148,13 @@
         echo "Numero righe: $row_number<br>";
         $rows = array();
 
-    echo "<script> var images = new Array(); </script>";
+    echo "<script> const images = []; </script>";
 
     while ($row = mysqli_fetch_array($query)) {
         $path = $row['located_at_path'];
         $title = $row['title'];
         $description = $row['description'];
-        echo "Path: $path - Title: $title - Description: $description";
+        echo "Path: $path - Title: $title";
         echo "<br>";
 
         echo "<script>
@@ -164,6 +164,14 @@
              </script>";
 
     }
+
+    echo "<script>
+
+            for(var index=0; index<images.length; index++){
+                console.log(images[index].title);
+            }
+
+             </script>";
     ?>
 
 
