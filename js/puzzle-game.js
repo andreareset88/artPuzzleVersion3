@@ -207,8 +207,9 @@ var puzzleGame = {
                         helper.doc('imageTitle').innerHTML = imageSecondPlayer.title;
                         helper.doc('timerEnd').innerHTML = (parseInt((now - puzzleGame.startTime) / 1000, 10));
                         helper.doc('stepEnd').innerHTML = incrementedStepSecondPlayer;*/
-                        helper.doc('showEndGame').innerHTML = helper.doc('endGame').innerHTML;
-                        helper.doc('showEndGame').setAttribute('class', 'popupText');
+                        helper.doc('showEndGameSecondPlayer').innerHTML = helper.doc('endGame').innerHTML;
+                        helper.doc('showEndGameSecondPlayer').style.removeProperty("display");
+                        helper.doc('showEndGameSecondPlayer').setAttribute('class', 'popupText');
                         document.getElementById('sortableSecondPlayer').setAttribute('style', 'display:none');
 
                         for (var k=0; k<(gridSize*gridSize); k++){
@@ -220,9 +221,9 @@ var puzzleGame = {
                             document.getElementById(k.toString()).ondrop = "return false;";
                         }
 
-                        /*document.getElementById('currentTimeBox').setAttribute('style', 'display:none');
+                        document.getElementById('currentTimeBox').setAttribute('style', 'display:none');
                         document.getElementById('numStepBox').setAttribute('style', 'display:none');
-                        document.getElementById('numStepBoxSecondPlayer').setAttribute('style', 'display:none');*/
+                        document.getElementById('numStepBoxSecondPlayer').setAttribute('style', 'display:none');
                     }
                 }
             };

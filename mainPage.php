@@ -70,7 +70,7 @@
             <ul id="sortableSecondPlayer" class="sortableSecondPlayer">
             </ul>
 
-            <span id="showEndGame" class="popupText">
+            <span id="showEndGameSecondPlayer" class="popupText">
             </span>
 
         </div>
