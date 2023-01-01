@@ -68,7 +68,7 @@ var puzzleGame = {
             var posX = (percentage * (i % gridSize)) + '%';
             var posY = (percentage * Math.floor(i / gridSize)) + '%';
             var posYVerticalShift = (percentage * Math.floor(i / gridSize)) + 500 + '%';
-            var posXHorizontalShift = (percentage * (i % gridSize)) + 720 + '%';
+            var posXHorizontalShift = (percentage * (i % gridSize)) + 700 + '%';
 
             // Creazione della tabella con celle vuote, dove andranno inseriti i pezzi
             // dell'immagine
