@@ -216,7 +216,13 @@
 
 
         function start() {
-
+            
+            helper.doc('showEndGame').style.display = 'none';
+            helper.doc('showEndGameSecondPlayer').style.display = 'none';
+            helper.doc('sortable').style.display = 'inline';
+            helper.doc('sortableSecondPlayer').style.display = 'inline';
+            helper.doc('stepPanel').innerHTML = 0;
+            helper.doc('stepPanelSecondPlayer').innerHTML = 0;
             helper.doc('currentTimeBox').style.display = '';
             helper.doc('currentTimeBox').style.textAlign = 'center';
             helper.doc('numStepBox').style.display = '';
@@ -224,6 +230,10 @@
             helper.doc('numStepBoxSecondPlayer').style.display = '';
             helper.doc('numStepBoxSecondPlayer').style.textAlign = 'center';
 
+            puzzleGame.stepsNumber = 0;
+            puzzleGame.stepsNumberSecondPlayer = 0;
+            puzzleGame.clock();
+            
             for (var j=0; j<16; j++){
                 document.getElementById('S'.concat(j.toString())).setAttribute('draggable', 'true');
                 document.getElementById('S'.concat(j.toString())).ondragstart = "return true;";
@@ -239,7 +249,9 @@
         function changeThePhoto() {
 
             helper.doc('showEndGame').style.display = 'none';
+            helper.doc('showEndGameSecondPlayer').style.display = 'none';
             helper.doc('sortable').style.display = 'inline';
+            helper.doc('sortableSecondPlayer').style.display = 'inline';
             helper.doc('stepPanel').innerHTML = 0;
             helper.doc('stepPanelSecondPlayer').innerHTML = 0;
             helper.doc('currentTimeBox').style.display = '';
