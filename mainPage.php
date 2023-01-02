@@ -117,8 +117,19 @@
         <div id ="endGameDeep" style="background-color: #f1580e; padding: 5px 10px 20px 10px; text-align: center; ">
 
             <h2 style="text-align: center">Game Over</h2>
+            <span id="winner" class="resizeEndGame"></span> <p class="resizeEndGame">vince la partita!</p>
             <br/>
-            <span id="winner"></span> vince la partita!
+            <p class="resizeEndGame">L'immagine è stata ricostruita correttamente!</p>
+            <br>
+            <p class="resizeEndGame">Titolo:</p> <span id="imageTitle" class="resizeEndGame"></span>
+            <br>
+            <p class="resizeEndGame">Descrizione: </p> <span id="imageDescription" class="resizeEndGame"></span>
+            <br/>
+            <p class="resizeEndGame">Steps:</p> <span id="stepEnd" class="resizeEndGame"></span>
+            <br>
+            <p class="resizeEndGame">Tempo impiegato:</p> <span id="timerEnd" class="resizeEndGame"></span> <p class="resizeEndGame">secondi</p>
+
+            <!--<span id="winner"></span> vince la partita!
             <br/>
             L'immagine è stata ricostruita correttamente!
             <br/>
@@ -128,7 +139,7 @@
             <br/>
             Steps: <span id="stepEnd"></span>
             <br/>
-            Tempo impiegato: <span id="timerEnd"></span> secondi
+            Tempo impiegato: <span id="timerEnd"></span> secondi-->
         </div>
     </div>
 
