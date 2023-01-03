@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Puzzle Game</title>
 
     <link href="css/puzzle-game.css" rel="stylesheet">
@@ -26,7 +26,7 @@
             <ul id="fillable" class="fillable">
             </ul>
             <div id="originalImageBox">
-                <img id="originalImage"/>
+                <img id="originalImage" class="responsiveImage" width="300" height="300"/>
                 <div>
 
                     <!--<button class="popup" onclick="showRules()">
@@ -63,7 +63,7 @@
         <div id="player2">
             <div id="originalImageBoxSecondPlayer">
 
-                <img id="originalImageSecondPlayer"/>
+                <img id="originalImageSecondPlayer" class="responsiveImage" width="300" height="300"/>
             </div>
             <ul id="fillableSecondPlayer" class="fillableSecondPlayer">
             </ul>
@@ -116,7 +116,7 @@
     <div id="endGame" style="display: none;">
         <div id ="endGameDeep" style="background-color: #f1580e; padding: 5px 10px 20px 10px; text-align: center; ">
 
-            <h2 style="text-align: center">Game Over</h2>
+            <h2 style="text-align: center">Fine partita</h2>
             <span id="winner" class="resizeEndGame"></span> <p class="resizeEndGame">vince la partita!</p>
             <br/>
             <p class="resizeEndGame">L'immagine è stata ricostruita correttamente!</p>

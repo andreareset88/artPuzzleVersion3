@@ -60,7 +60,7 @@
     height: 1000px;
     position: absolute;
     left: 46%;
-    margin-left: 0px;
+    margin-left: 0;
     top: 0;
 }
 
@@ -123,8 +123,6 @@ body {
     font-size: 0.8em;
     margin: 1px 1px;
     vertical-align: top;
-    max-width: 100%;
-    height: auto;
     /*width: 300px;
     height: 300px;*/
 }
@@ -134,10 +132,13 @@ body {
     font-size: 0.8em;
     /*margin: 1px 10px;*/
     vertical-align: top;
-    max-width: 100%;
-    height: auto;
     /*width: 300px;
     height: 300px;*/
+}
+
+.responsiveImage {
+    max-width: 100%;
+    height: auto;
 }
 
 /*#collage #numStepBox, #collage #currentTimeBox {*/
@@ -164,8 +165,6 @@ body {
 #collage img#originalImage {
     /*border: 2px solid #a46;*/
     outline: 1px solid black;
-    max-width: 100%;
-    height: auto;
     /*width: 300px;
     height: 300px;*/
 }
@@ -173,8 +172,6 @@ body {
 #collage img#originalImageSecondPlayer {
     /*border: 2px solid #a46;*/
     outline: 1px solid black;
-    max-width: 100%;
-    height: auto;
     /*width: 300px;
     height: 300px;*/
 }
@@ -264,6 +261,21 @@ body {
     #originalImageBox, #originalImageBoxSecondPlayer {
         width: 150px;
         height: 150px;
+    }
+}
+
+@media screen and (max-width: 1262px){
+    #collage #sortable li, #collage #sortableSecondPlayer li, #collage #fillable li, #collage #fillableSecondPlayer li{
+        width: 61px;
+        height: 61px;
+    }
+    #player1, #player2 {
+        max-width: 100%;
+        height: auto;
+    }
+    #collage #fillable, #collage #fillableSecondPlayer {
+        width: 245px;
+        height: 245px;
     }
 }
 
