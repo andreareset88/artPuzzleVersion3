@@ -35,6 +35,7 @@ var puzzleGame = {
 
         for (var currentItem=0; currentItem<endGameSpanNodesLength; currentItem++){
             var currentSpan = endGameSpanNodes[currentItem];
+            // TODO rimuovere righe ridondanti e controllare funzionamento
             if (currentSpan.id == spanName){
                 currentSpan.innerHTML = value;
             } else if (currentSpan.id == spanName){
@@ -78,8 +79,8 @@ var puzzleGame = {
             fillableLi.setAttribute('data-value', FiId);
             fillableLi.style.backgroundSize = (gridSize * 100) + '%';
             fillableLi.style.backgroundPosition = posX + ' ' + posY;
-            fillableLi.style.width = 300 / gridSize + 'px';
-            fillableLi.style.height = 300 / gridSize + 'px';
+            //fillableLi.style.width = 300 / gridSize + 'px';
+            //fillableLi.style.height = 300 / gridSize + 'px';
 
             fillableLi.setAttribute('draggable', 'true');
 
@@ -91,10 +92,12 @@ var puzzleGame = {
             sortableLi.style.backgroundImage = 'url(' + image.src + ')';
             sortableLi.style.backgroundSize = (gridSize * 100) + '%';
             sortableLi.style.backgroundPosition = posX + ' ' + posYVerticalShift;
-            sortableLi.style.width = 300 / gridSize + 'px';
-            sortableLi.style.height = 300 / gridSize + 'px';
+            //sortableLi.style.width = 300 / gridSize + 'px';
+            //sortableLi.style.height = 300 / gridSize + 'px';
 
             sortableLi.setAttribute('draggable', 'true');
+
+            //sortableLi.addEventListener("touchstart",  , false);
 
             // Creazione della tabella con celle vuote, dove andranno inseriti i pezzi
             // dell'immagine
@@ -104,8 +107,8 @@ var puzzleGame = {
             fillableLiSecondPlayer.setAttribute('data-value', FiIdSecondPlayer);
             fillableLiSecondPlayer.style.backgroundSize = (gridSize * 100) + '%';
             fillableLiSecondPlayer.style.backgroundPosition = posXHorizontalShift + ' ' + posY;
-            fillableLiSecondPlayer.style.width = 300 / gridSize + 'px';
-            fillableLiSecondPlayer.style.height = 300 / gridSize + 'px';
+            //fillableLiSecondPlayer.style.width = 300 / gridSize + 'px';
+            //fillableLiSecondPlayer.style.height = 300 / gridSize + 'px';
 
             fillableLiSecondPlayer.setAttribute('draggable', 'true');
 
@@ -118,8 +121,8 @@ var puzzleGame = {
             sortableLiSecondPlayer.style.backgroundImage = 'url(' + imageSecondPlayer.src + ')';
             sortableLiSecondPlayer.style.backgroundSize = (gridSize * 100) + '%';
             sortableLiSecondPlayer.style.backgroundPosition = posXHorizontalShift + ' ' + posYVerticalShift;
-            sortableLiSecondPlayer.style.width = 300 / gridSize + 'px';
-            sortableLiSecondPlayer.style.height = 300 / gridSize + 'px';
+            //sortableLiSecondPlayer.style.width = 300 / gridSize + 'px';
+            //sortableLiSecondPlayer.style.height = 300 / gridSize + 'px';
 
             sortableLiSecondPlayer.setAttribute('draggable', 'true');
 

@@ -114,7 +114,7 @@
 
 
     <div id="endGame" style="display: none;">
-        <div id ="endGameDeep" style="background-color: #f1580e; padding: 5px 10px 20px 10px; text-align: center; ">
+        <div id ="endGameDeep" style="background-color: lawngreen; padding: 5px 10px 20px 10px; text-align: center; ">
 
             <h2 style="text-align: center">Fine partita</h2>
             <span id="winner" class="resizeEndGame"></span> <p class="resizeEndGame">vince la partita!</p>
@@ -215,6 +215,7 @@
             helper.doc('currentTimeBox').style.display = 'none';
             helper.doc('numStepBox').style.display = 'none';
             helper.doc('numStepBoxSecondPlayer').style.display = 'none';
+            helper.doc('startGame').style.display = 'inline';
 
             for (var j=0; j<16; j++){
                 document.getElementById('S'.concat(j.toString())).setAttribute('draggable', 'false');
@@ -264,8 +265,8 @@
             helper.doc('showEndGameSecondPlayer').style.display = 'none';
             helper.doc('sortable').style.display = 'inline';
             helper.doc('sortableSecondPlayer').style.display = 'inline';
-            helper.doc('stepPanel').innerHTML = 0;
-            helper.doc('stepPanelSecondPlayer').innerHTML = 0;
+            //helper.doc('stepPanel').innerHTML = 0;
+            //helper.doc('stepPanelSecondPlayer').innerHTML = 0;
             helper.doc('currentTimeBox').style.display = '';
             helper.doc('currentTimeBox').style.textAlign = 'center';
             helper.doc('numStepBox').style.display = '';
@@ -273,11 +274,20 @@
             helper.doc('numStepBoxSecondPlayer').style.display = '';
             helper.doc('numStepBoxSecondPlayer').style.textAlign = 'center';
 
-            puzzleGame.stepsNumber = 0;
-            puzzleGame.stepsNumberSecondPlayer = 0;
+            //puzzleGame.stepsNumber = 0;
+            //puzzleGame.stepsNumberSecondPlayer = 0;
             puzzleGame.clock();
 
-            start();
+            for (var j=0; j<16; j++){
+                document.getElementById('S'.concat(j.toString())).setAttribute('draggable', 'true');
+                document.getElementById('S'.concat(j.toString())).ondragstart = "return true;";
+                document.getElementById('S'.concat(j.toString())).ondrop = "return true;";
+                document.getElementById(j.toString()).setAttribute('draggable', 'true');
+                document.getElementById(j.toString()).ondragstart = "return true;";
+                document.getElementById(j.toString()).ondrop = "return true;";
+            }
+
+            puzzleGame.startGame(images, 4, "<?php echo strtoupper($_POST['user1']) ?>", "<?php echo strtoupper($_POST['user2']) ?>");
         }
 
         function showRules() {
