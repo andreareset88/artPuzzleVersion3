@@ -4,7 +4,6 @@
     cursor: pointer;
     -webkit-user-select: none;
     -moz-user-select: none;
-
     -ms-user-select: none;
     user-select: none;
 }
@@ -51,19 +50,6 @@
     to {opacity:1 ;}
 }
 
-/*img {
-    margin: 0 10px;
-}*/
-
-.vl {
-    border-left: 1px solid black;
-    height: 1000px;
-    position: absolute;
-    left: 46%;
-    margin-left: 0;
-    top: 0;
-}
-
 h2 {
     font-weight: normal;
     font-size: 2vw;
@@ -79,9 +65,8 @@ h3 {
 }
 
 body {
-    /*font-family: 'Segoe UI', Calibri, Arial;*/
     font-family: "Copperplate Gothic Bold", fantasy;
-    background-color: #808080;
+    background-color: burlywood;
     margin: 0;
 }
 
@@ -98,13 +83,13 @@ body {
     width: 99%;
 }
 
-
 #player1 {
     display: inline-block;
     width:615px;
     height:620px;
     border: 1px solid red;
 }
+
 #player2 {
     vertical-align:top;
     display: inline-block;
@@ -123,25 +108,13 @@ body {
     font-size: 0.8em;
     margin: 1px 1px;
     vertical-align: top;
-    /*width: 300px;
-    height: 300px;*/
 }
 
 #collage #originalImageBoxSecondPlayer {
     display: inline-block;
     font-size: 0.8em;
-    /*margin: 1px 10px;*/
     vertical-align: top;
-    /*width: 300px;
-    height: 300px;*/
 }
-
-/*#collage #numStepBox, #collage #currentTimeBox {*/
-/*    display: inline-block;*/
-/*    width: 48%;*/
-/*    text-align: center;*/
-/*}*/
-
 
 #collage #currentTimeBox {
     text-align: center;
@@ -149,26 +122,8 @@ body {
     margin-bottom: 10px;
 }
 
-/*#collage #numStepBox div {*/
-/*    background-color: #f1580e;*/
-/*    display: inline-block;*/
-/*    padding: 1px 4px;*/
-/*    margin: 0px auto;*/
-/*    max-width: 800px;*/
-/*}*/
-
-#collage img#originalImage {
-    /*border: 2px solid #a46;*/
+#collage img#originalImage, #collage img#originalImageSecondPlayer {
     outline: 1px solid black;
-    /*width: 300px;
-    height: 300px;*/
-}
-
-#collage img#originalImageSecondPlayer {
-    /*border: 2px solid #a46;*/
-    outline: 1px solid black;
-    /*width: 300px;
-    height: 300px;*/
 }
 
 #collage #sortable {
@@ -178,10 +133,8 @@ body {
     margin: 1px;
     padding: 0;
     float: left;
-    max-width: 100%;
-    height: auto;
-    /*width: 300px;
-    height: 300px;*/
+    width: 300px;
+    height: 300px;
 }
 
 #collage #sortableSecondPlayer {
@@ -191,10 +144,8 @@ body {
     margin: 1px;
     padding: 0;
     float: right;
-    max-width: 100%;
-    height: auto;
-    /*width: 300px;
-    height: 300px;*/
+    width: 300px;
+    height: 300px;
 }
 
 #collage #sortable li, #collage #sortableSecondPlayer li {
@@ -208,7 +159,6 @@ body {
     height: 75px;
 }
 
-
 #collage #fillable, #collage #fillableSecondPlayer {
     border: 2px solid #a46;
     list-style-type: none;
@@ -218,7 +168,6 @@ body {
     width: 300px;
     height: 300px;
 }
-
 
 #collage #fillable li, #collage #fillableSecondPlayer li {
     background-size: 300% 300%;
@@ -230,7 +179,6 @@ body {
     width: 75px;
     height: 75px;
 }
-
 
 #collage #buttons {
     text-align: center;
@@ -256,27 +204,3 @@ body {
     max-width: 100%;
     height: auto;
 }
-
-@media screen and (max-width: 820px) {
-    #originalImageBox, #originalImageBoxSecondPlayer {
-        width: 150px;
-        height: 150px;
-    }
-}
-
-@media screen and (max-width: 1262px){
-    #collage #sortable li, #collage #sortableSecondPlayer li, #collage #fillable li, #collage #fillableSecondPlayer li{
-        width: 61px;
-        height: 61px;
-    }
-    #player1, #player2 {
-        max-width: 100%;
-        height: auto;
-    }
-    #collage #fillable, #collage #fillableSecondPlayer {
-        width: 245px;
-        height: 245px;
-    }
-}
-
-

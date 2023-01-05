@@ -1,0 +1,69 @@
+@media screen and (max-width: 1262px){
+    #player1 {
+        max-width: 100%;
+        height: 416px;
+        width: 529px;
+    }
+
+    #player2 {
+        max-width: 100%;
+        width: 511px;
+        height: 418px;
+        /*height: auto;*/
+        position: relative;
+        /*right: 0;*/
+    }
+    #collage #sortableSecondPlayer {
+        position: absolute;
+        left: 0;
+        top: 209px;
+    }
+
+    #collage #fillableSecondPlayer {
+        position: absolute;
+        right: 303px;
+    }
+
+    #collage #originalImageSecondPlayer {
+        position: relative;
+        left: 245px;
+        /*right: 184px;*/
+    }
+    #collage #originalImage, #collage #originalImageSecondPlayer {
+        width: 200px;
+        height: 200px;
+    }
+
+    #collage #originalImageBox {
+        position: absolute;
+        left: 257px;
+    }
+    #collage #fillable, #collage #fillableSecondPlayer {
+        width: 202px;
+        height: 201px;
+    }
+    #collage #fillable li, #collage #fillableSecondPlayer li {
+        width: 50px;
+        height: 50px;
+    }
+
+    #collage #sortable li, #collage #sortableSecondPlayer li {
+        width: 50px;
+        height: 50px;
+    }
+    #collage #sortable, #collage #sortableSecondPlayer {
+        width: 202px;
+        height: 202px;
+    }
+    #collage #sortable {
+        position: absolute;
+        top: 260px;
+        left: 7px;
+    }
+
+    #collage button {
+        font-size: 13px;
+    }
+
+
+}

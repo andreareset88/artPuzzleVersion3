@@ -17,8 +17,8 @@ var puzzleGame = {
         this.setValuesForEndGame('stepEnd', '');
         this.setValuesForEndGame('timerEnd', '');
 
-        this.stepsNumber = 0;
-        this.stepsNumberSecondPlayer = 0;
+        /*this.stepsNumber = 0;
+        this.stepsNumberSecondPlayer = 0;*/
         this.startTime = new Date().getTime();
         this.clock();
 
@@ -35,7 +35,7 @@ var puzzleGame = {
 
         for (var currentItem=0; currentItem<endGameSpanNodesLength; currentItem++){
             var currentSpan = endGameSpanNodes[currentItem];
-            // TODO rimuovere righe ridondanti e controllare funzionamento
+            // TODO rimuovere righe ridondanti e controllare funzionamento (dà errore)
             if (currentSpan.id == spanName){
                 currentSpan.innerHTML = value;
             } else if (currentSpan.id == spanName){

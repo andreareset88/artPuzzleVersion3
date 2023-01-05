@@ -1,0 +1,36 @@
+@media screen and (max-width: 962px) {
+    #player1 {
+        max-width: 100%;
+        height: 423px;
+        width: 420px;
+    }
+
+    #collage #fillableSecondPlayer {
+        position: absolute;
+        right: 206px;
+    }
+
+    #player2 {
+        max-width: 100%;
+        width: 413px;
+        height: 418px;
+        /* height: auto; */
+        position: relative;
+        /* right: 0; */
+    }
+
+    #collage #originalImageBox {
+        position: absolute;
+        left: 220px;
+    }
+
+    #collage #originalImageSecondPlayer {
+        position: relative;
+        left: 210px;
+        top: 2px;
+    }
+
+    #collage button {
+        font-size: 11px;
+    }
+}
