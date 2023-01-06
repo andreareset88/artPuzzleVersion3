@@ -92,8 +92,7 @@ var puzzleGame = {
             //sortableLi.style.height = 300 / gridSize + 'px';
 
             sortableLi.setAttribute('draggable', 'true');
-
-            //sortableLi.addEventListener("touchstart",  , false);
+            sortableLi.setAttribute()
 
             // Creazione della tabella con celle vuote, dove andranno inseriti i pezzi
             // dell'immagine
@@ -127,7 +126,9 @@ var puzzleGame = {
             //       [2) Match al meglio di 3 (chi arriva primo a 2)]
 
             sortableLi.ondragstart = (event) => event.dataTransfer.setData('data', event.target.id);
+            sortableLi.ontouchstart = (event) => event.dataTransfer.setData('data', event.target.id);
             fillableLi.ondragover = (event) => event.preventDefault();
+            fillableLi.ontouchmove = (event) => event.preventDefault();
             fillableLi.ondrop = (event) => {
                 let source = helper.doc(event.dataTransfer.getData('data'));
                 let destination = helper.doc(event.target.id);
@@ -173,7 +174,54 @@ var puzzleGame = {
                         document.getElementById('numStepBoxSecondPlayer').setAttribute('style', 'display:none');
                     }
                 }
-            };
+            }
+            fillableLi.ontouchend = (event) => {
+                let source = helper.doc(event.dataTransfer.getData('data'));
+                let destination = helper.doc(event.target.id);
+                let p = destination.parentNode;
+
+                if (source && destination && p) {
+
+                    let data = event.dataTransfer.getData('data');
+                    event.target.appendChild(document.getElementById(data));
+
+
+                    let valuesId = Array.from(helper.doc('sortable').children).map(x => x.id);
+                    var now = new Date().getTime();
+                    let incrementedStep = ++puzzleGame.stepsNumber;
+                    helper.doc('stepPanel').innerHTML = incrementedStep;
+
+                    if (isImageSorted(valuesId)) {
+                        this.setValuesForEndGame('winner', user1.toString());
+                        this.setValuesForEndGame('imageTitle', image.title);
+                        this.setValuesForEndGame('imageDescription', image.description);
+                        this.setValuesForEndGame('timerEnd', (parseInt((now - puzzleGame.startTime) / 1000, 10)));
+                        this.setValuesForEndGame('stepEnd', incrementedStep);
+                        /*helper.doc('winner').innerHTML = user1.toString();
+                        helper.doc('imageTitle').innerHTML = image.title;
+                        helper.doc('timerEnd').innerHTML = (parseInt((now - puzzleGame.startTime) / 1000, 10));
+                        helper.doc('stepEnd').innerHTML = incrementedStep;*/
+                        helper.doc('showEndGame').innerHTML = helper.doc('endGame').innerHTML;
+                        helper.doc('showEndGame').style.removeProperty("display");
+                        helper.doc('showEndGame').setAttribute('class', 'popupText');
+                        document.getElementById('sortable').setAttribute('style', 'display:none');
+
+                        for (var j=0; j<(gridSize*gridSize); j++){
+                            document.getElementById('F'.concat(j.toString())).setAttribute('draggable', 'false');
+                            document.getElementById('F'.concat(j.toString())).ondragstart = "return false;";
+                            document.getElementById('F'.concat(j.toString())).ondrop = "return false;";
+                            document.getElementById('S'.concat(j.toString())).setAttribute('draggable', 'false');
+                            document.getElementById('S'.concat(j.toString())).ondragstart = "return false;";
+                            document.getElementById('S'.concat(j.toString())).ondrop = "return false;";
+                        }
+
+                        document.getElementById('currentTimeBox').setAttribute('style', 'display:none');
+                        document.getElementById('numStepBox').setAttribute('style', 'display:none');
+                        document.getElementById('numStepBoxSecondPlayer').setAttribute('style', 'display:none');
+                    }
+                }
+            }
+            ;
 
             // GESTIONE DRAG & DROP SECONDO GIOCATORE
 

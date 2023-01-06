@@ -15,6 +15,7 @@
     <link href="css/mediaScreenSmall.css" rel="stylesheet">
     <link href="css/mediaScreenSmaller.css" rel="stylesheet">
     <link href="css/mediaScreenSmallest.css" rel="stylesheet">
+    <link href="css/mediaScreenMini.css" rel="stylesheet">
 
 </head>
 

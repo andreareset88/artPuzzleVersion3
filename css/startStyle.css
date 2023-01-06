@@ -7,18 +7,3 @@ body {
 #button {
     font-family: fantasy;
 }
-
-h2 {
-    position: relative;
-    bottom: 20px;
-}
-
-#insertNames {
-    position: relative;
-    bottom: 30px;
-}
-
-#form, #buonDivertimento {
-    position: relative;
-    bottom: 35px;
-}

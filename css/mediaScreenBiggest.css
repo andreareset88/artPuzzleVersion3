@@ -70,4 +70,8 @@
         font-size: 13px;
     }
 
+    #collage #buttons {
+        margin-top: -14px;
+    }
+
 }
