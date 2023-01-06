@@ -4,6 +4,7 @@
     cursor: pointer;
     -webkit-user-select: none;
     -moz-user-select: none;
+
     -ms-user-select: none;
     user-select: none;
 }
@@ -50,6 +51,15 @@
     to {opacity:1 ;}
 }
 
+.vl {
+    border-left: 1px solid black;
+    height: 1000px;
+    position: absolute;
+    left: 46%;
+    margin-left: 0;
+    top: 0;
+}
+
 h2 {
     font-weight: normal;
     font-size: 2vw;
@@ -72,8 +82,6 @@ body {
 
 #collage hr {
     border: none;
-    border-top: 2px solid #f5f2f2;
-    height: 1px;
 }
 
 #collage #mainPanel {
@@ -81,6 +89,8 @@ body {
     padding: 2px 0;
     margin: 2px auto;
     width: 99%;
+    position: relative;
+    bottom: 12px;
 }
 
 #player1 {
@@ -89,7 +99,6 @@ body {
     height:620px;
     border: 1px solid red;
 }
-
 #player2 {
     vertical-align:top;
     display: inline-block;

@@ -9,9 +9,7 @@
 
 <?php
 
-//include('mysqlWrapper.php');
-
-$id =  "1";//Math.floor(Math.random() * 3);
+$id =  "1";
 echo "ID: $id <br>" ;
 $connection = mysqli_connect('localhost', 'artpuzzle', '', 'my_artpuzzle'); // Establishing Connection with Server
 if (mysqli_connect_errno()) {
@@ -19,9 +17,6 @@ if (mysqli_connect_errno()) {
 } else {
     echo "Connection established<br>";
 }
-//$db = mysqli_select_db($connection,"my_artpuzzle"); // Selecting Database
-//echo "DB selected <br>";
-//MySQL Query to read data
 
 $path='';
 $title='';
@@ -40,8 +35,7 @@ while ($row = mysqli_fetch_array($query)) {
     echo "<br>";
 
     echo "<script>
-        //let element = {'src': '$path', 'title': '$title'};
-        //console.log(element);
+        
         images.push({'src': '$path', 'title': '$title'});
 
     </script>";

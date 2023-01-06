@@ -6,10 +6,6 @@ var puzzleGame = {
     startTime: new Date().getTime(),
 
     startGame: function (images, gridSize, user1, user2) {
-        /*this.setImage(images, gridSize, user1, user2);
-        helper.doc('mainPanel').style.display = 'block';
-        helper.shuffle('sortable');
-        helper.shuffle('sortableSecondPlayer');*/
 
         this.setValuesForEndGame('winner', '');
         this.setValuesForEndGame('imageTitle', '');

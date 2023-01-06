@@ -1,4 +1,5 @@
 @media screen and (max-width: 692px) {
+
     #player1 {
         max-width: 100%;
         height: 306px;
@@ -26,5 +27,10 @@
     #collage #fillableSecondPlayer {
         position: absolute;
         right: 159px;
+    }
+
+    #collage #fillable {
+        position: relative;
+        right: 0;
     }
 }

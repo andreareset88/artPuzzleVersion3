@@ -1,4 +1,5 @@
 @media screen and (max-width: 639px) {
+
     #collage #originalImage, #collage #originalImageSecondPlayer {
         width: 105px;
         height: 105px;
@@ -17,34 +18,24 @@
         position: relative;
     }
 
-    #collage #fillable, #collage #fillableSecondPlayer {
-        width: 101px;
-        height: 101px;
-    }
-
-    #collage #fillable li, #collage #fillableSecondPlayer li {
-        width: 25px;
-        height: 25px;
-    }
-
-    #collage #sortable, #collage #sortableSecondPlayer {
-        width: 101px;
-        height: 101px;
-    }
-
+    #collage #fillable li, #collage #fillableSecondPlayer li,
     #collage #sortable li, #collage #sortableSecondPlayer li {
         width: 25px;
         height: 25px;
     }
 
     #collage #fillable {
+        width: 101px;
+        height: 101px;
         position: absolute;
         left: 16px;
     }
 
     #collage #sortable {
+        width: 101px;
+        height: 101px;
         position: absolute;
-        top: 151px;
+        top: 123px;
         left: 16px;
     }
 
@@ -54,6 +45,8 @@
     }
 
     #collage #fillableSecondPlayer {
+        width: 101px;
+        height: 101px;
         position: absolute;
         right: 110px;
     }
@@ -65,6 +58,8 @@
     }
 
     #collage #sortableSecondPlayer {
+        width: 101px;
+        height: 101px;
         position: absolute;
         left: 0;
         top: 118px;

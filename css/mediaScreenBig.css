@@ -1,8 +1,20 @@
 @media screen and (max-width: 962px) {
+
     #player1 {
         max-width: 100%;
-        height: 423px;
+        height: 456px;
         width: 420px;
+    }
+
+    #collage #sortable {
+        position: absolute;
+        top: 222px;
+    }
+
+    #collage #sortableSecondPlayer {
+        position: absolute;
+        left: 0;
+        top: 217px;
     }
 
     #collage #fillableSecondPlayer {
@@ -13,10 +25,8 @@
     #player2 {
         max-width: 100%;
         width: 413px;
-        height: 418px;
-        /* height: auto; */
+        height: 456px;
         position: relative;
-        /* right: 0; */
     }
 
     #collage #originalImageBox {

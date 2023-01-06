@@ -2,57 +2,54 @@
 
     #player1 {
         max-width: 100%;
-        height: 306px;
+        height: 350px;
         width: 335px;
     }
 
     #player2 {
         max-width: 100%;
         width: 326px;
-        height: 307px;
-        /* height: auto; */
+        height: 350px;
         position: relative;
-        /* right: 0; */
     }
 
     #collage #sortableSecondPlayer {
+        width: 142px;
+        height: 142px;
         position: absolute;
         left: 0;
         top: 158px;
     }
 
-    #collage #fillable, #collage #fillableSecondPlayer {
+    #collage #fillableSecondPlayer {
         width: 142px;
         height: 142px;
-    }
-
-    #collage #fillableSecondPlayer {
         position: absolute;
         right: 178px;
     }
 
-    #collage #fillable li, #collage #fillableSecondPlayer li {
-        width: 35px;
-        height: 35px;
+    #collage #fillable {
+        width: 142px;
+        height: 142px;
+        position: relative;
+        right: 0;
     }
 
+    #collage #fillable li, #collage #fillableSecondPlayer li,
     #collage #sortable li, #collage #sortableSecondPlayer li {
         width: 35px;
         height: 35px;
     }
 
     #collage #sortable {
+        width: 142px;
+        height: 142px;
         position: absolute;
-        top: 200px;
+        top: 164px;
         left: 7px;
     }
 
-    #collage #sortable, #collage #sortableSecondPlayer {
-        width: 142px;
-        height: 142px;
-    }
-
-    #collage #originalImage, #collage #originalImageSecondPlayer {
+    #collage #originalImage {
         width: 150px;
         height: 150px;
     }
@@ -63,6 +60,8 @@
     }
 
     #collage #originalImageSecondPlayer {
+        width: 150px;
+        height: 150px;
         position: relative;
         left: 167px;
         top: 2px;
