@@ -1,0 +1,10 @@
+@media screen and (max-width: 359.9px){
+
+    #collage {
+        display: none;
+    }
+
+    #noContent {
+        display: inline;
+    }
+}

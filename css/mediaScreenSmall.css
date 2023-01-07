@@ -3,12 +3,12 @@
     #player1 {
         max-width: 100%;
         height: 350px;
-        width: 335px;
+        width: 320px;
     }
 
     #player2 {
         max-width: 100%;
-        width: 326px;
+        width: 355px;
         height: 350px;
         position: relative;
     }
@@ -25,7 +25,7 @@
         width: 142px;
         height: 142px;
         position: absolute;
-        right: 178px;
+        right: 207px;
     }
 
     #collage #fillable {

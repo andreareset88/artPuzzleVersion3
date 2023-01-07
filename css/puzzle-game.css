@@ -60,6 +60,11 @@
     top: 0;
 }
 
+#noContent {
+    display: none;
+    font-size: medium;
+}
+
 h2 {
     font-weight: normal;
     font-size: 2vw;
@@ -196,6 +201,11 @@ body {
 
 #collage #numStepBox, #collage #numStepBoxSecondPlayer {
     text-align: center;
+}
+
+.playingPanel {
+    position: relative;
+    bottom: 28px;
 }
 
 #collage button {

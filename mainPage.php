@@ -5,6 +5,7 @@
     <title>Art Puzzle</title>
     <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
     <script src="js/puzzle-game.js"></script>
+    <script src="js/dragDropTouch.js"></script>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -16,10 +17,14 @@
     <link href="css/mediaScreenSmaller.css" rel="stylesheet">
     <link href="css/mediaScreenSmallest.css" rel="stylesheet">
     <link href="css/mediaScreenMini.css" rel="stylesheet">
+    <link href="css/mediaScreenMinimum.css" rel="stylesheet">
 
 </head>
 
 <body class="bg-info">
+
+<p id="noContent">Il dispositivo non è supportato: larghezza troppo limitata
+    (<360px) per giocare</p>
 
 <div id="collage">
 
@@ -63,15 +68,15 @@
 
     </div>
 
-    <div id="currentTimeBox">
+    <div id="currentTimeBox" class="playingPanel">
         Tempo impiegato: <span id="timerPanel"></span> secondi
     </div>
 
-    <div id="numStepBox">
+    <div id="numStepBox" class="playingPanel">
         Steps eseguiti da <?php echo strtoupper($_POST['user1']) ?>: <span id="stepPanel"></span>
     </div>
 
-    <div id="numStepBoxSecondPlayer">
+    <div id="numStepBoxSecondPlayer" class="playingPanel">
         Steps eseguiti da <?php echo strtoupper($_POST['user2']) ?>: <span id="stepPanelSecondPlayer"></span>
     </div>
 
