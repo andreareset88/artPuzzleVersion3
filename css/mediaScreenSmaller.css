@@ -1,4 +1,4 @@
-@media screen and (max-width: 706px) {
+@media screen and (max-width: 706px) and (min-width: 639px){
 
     #player1 {
         max-width: 100%;

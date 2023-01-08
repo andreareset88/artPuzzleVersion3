@@ -1,3 +1,8 @@
+/*Questo script .js è stato utilizzato per convertire gli eventi drag & drop
+in eventi touch (infatti, in fase di scrittura del codice, per testare le
+funzionalità implementate su desktop sono stati usati gli eventi ondragstart,
+ondragover e ondrop).*/
+
 var DragDropTouch;
 (function (DragDropTouch_1) {
     'use strict';

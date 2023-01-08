@@ -15,16 +15,14 @@
     <link href="css/mediaScreenBig.css" rel="stylesheet">
     <link href="css/mediaScreenSmall.css" rel="stylesheet">
     <link href="css/mediaScreenSmaller.css" rel="stylesheet">
-    <link href="css/mediaScreenSmallest.css" rel="stylesheet">
-    <link href="css/mediaScreenMini.css" rel="stylesheet">
     <link href="css/mediaScreenMinimum.css" rel="stylesheet">
 
 </head>
 
 <body class="bg-info">
 
-<p id="noContent">Il dispositivo non è supportato: larghezza troppo limitata
-    (<360px) per giocare</p>
+<p id="noContent">Attenzione, il dispositivo non è supportato: larghezza troppo limitata
+    (<360px) per giocare. Si prega di ruotare lo schermo</p>
 
 <div id="collage">
 
@@ -106,7 +104,7 @@
 
 
     <div id="endGame" style="display: none;">
-        <div id ="endGameDeep" style="background-color: lawngreen; text-align: center; ">
+        <div id ="endGameDeep" style="background-color: lawngreen; text-align: center; z-index: 100">
 
             <h2 style="text-align: center">Fine partita</h2>
             <span id="winner" class="resizeEndGame"></span> <p class="resizeEndGame">vince la partita!</p>
@@ -138,6 +136,8 @@
         $path='';
         $title='';
         $query = mysqli_query($connection, 'select * from images');
+
+        // Questi servivano solo per delle stampe in fase di verifica, ora non vengono usati...
         $row_number = mysqli_num_rows($query);
         $rows = array();
 

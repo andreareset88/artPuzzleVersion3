@@ -77,24 +77,16 @@ var puzzleGame = {
             sortableLi.setAttribute('data-value', i);
             sortableLi.style.backgroundImage = 'url(' + image.src + ')';
             sortableLi.style.backgroundSize = (gridSize * 100) + '%';
-
-            /* La griglia con i pezzi di immagine sparsi viene posizionata nella
-            * stessa ascissa di fillable, ma in ordinata differente  (è più in basso) */
             sortableLi.style.backgroundPosition = posX + ' ' + posYVerticalShift;
             sortableLi.setAttribute('draggable', 'true');
 
             // Creazione della tabella con celle vuote, dove andranno inseriti i pezzi
             // dell'immagine
-
             let fillableLiSecondPlayer = document.createElement('li');
             let FiIdSecondPlayer = 'FS'.concat(i.toString());
             fillableLiSecondPlayer.id = FiIdSecondPlayer;
             fillableLiSecondPlayer.setAttribute('data-value', FiIdSecondPlayer);
             fillableLiSecondPlayer.style.backgroundSize = (gridSize * 100) + '%';
-
-            /* La griglia vuota del secondo giocatore viene posizionata con la stessa ordinata
-            * della fillable del primo giocatore, ma con ascissa diversa (si trova infatti "sulla stessa
-            * riga" di fillable) */
             fillableLiSecondPlayer.style.backgroundPosition = posXHorizontalShift + ' ' + posY;
             fillableLiSecondPlayer.setAttribute('draggable', 'true');
 
@@ -218,6 +210,8 @@ var puzzleGame = {
         }
         helper.shuffle('sortable');
         helper.shuffle('sortableSecondPlayer');
+        helper.shuffle('fillable');
+        helper.shuffle('fillableSecondPlayer');
     }
 
 };
