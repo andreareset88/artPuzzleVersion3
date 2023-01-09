@@ -38,6 +38,9 @@
         quella di destinazione (fillable) dove inserire i quadratini selezionati-->
         <div id="player1">
 
+            <span id="showScore2" class="popupText">
+                </span>
+
             <ul id="fillable" class="fillable"></ul>
 
             <div id="originalImageBox">
@@ -51,6 +54,9 @@
         </div>
 
         <div id="player2">
+
+            <span id="showScore1" class="popupText">
+                </span>
 
             <div id="originalImageBoxSecondPlayer">
                 <img id="originalImageSecondPlayer" width="300" height="300"/>
@@ -89,6 +95,7 @@
                 descrizione dell'opera alla destra del puzzle.
                 Il tempo trascorso viene visualizzato nella parte inferiore della schermata.
                 Entrambi i giocatori possono richiedere di cambiare l'immagine da ricomporre.
+                Vince la partita chi arriva primo a 2 vittorie (al meglio di 3).
                 </span>
         </button>
 
@@ -111,16 +118,24 @@
             <br/>
             <p class="resizeEndGame">L'immagine è stata ricostruita correttamente!</p>
             <br>
-            <p class="resizeEndGame">Titolo:</p> <span id="imageTitle" class="resizeEndGame"></span>
+            <p class="resizeEndGame" style="text-decoration: underline black">Titolo:</p> <span id="imageTitle" class="resizeEndGame"></span>
             <br>
-            <p class="resizeEndGame">Descrizione: </p> <span id="imageDescription" class="resizeEndGame"></span>
+            <p class="resizeEndGame" style="text-decoration: underline black">Descrizione: </p> <span id="imageDescription" class="resizeEndGame"></span>
             <br/>
-            <p class="resizeEndGame">Steps:</p> <span id="stepEnd" class="resizeEndGame"></span>
+            <p class="resizeEndGame" style="text-decoration: underline black">Steps:</p> <span id="stepEnd" class="resizeEndGame"></span>
             <br>
-            <p class="resizeEndGame">Tempo impiegato:</p> <span id="timerEnd" class="resizeEndGame"></span> <p class="resizeEndGame">secondi</p>
+            <p class="resizeEndGame" style="text-decoration: underline black">Tempo impiegato:</p> <span id="timerEnd" class="resizeEndGame"></span> <p class="resizeEndGame">secondi</p>
 
         </div>
 
+    </div>
+
+    <div id="endGameScore" style="display: none">
+        <div id="endGameScoreDeep" style="text-align: center; background-color: orangered">
+            <p class="resizeEndGame">Punteggio finale:</p>
+            <br>
+            <span id="scoreFirst"></span> - <span id="scoreSecond"></span>
+        </div>
     </div>
 
 
@@ -194,6 +209,12 @@
             helper.doc('numStepBox').style.textAlign = 'center';
             helper.doc('numStepBoxSecondPlayer').style.display = '';
             helper.doc('numStepBoxSecondPlayer').style.textAlign = 'center';
+            helper.doc('originalImageBox').style.display = 'inline-block';
+            helper.doc('originalImageBoxSecondPlayer').style.display = 'inline-block';
+            helper.doc('fillable').style.display = 'inline-block';
+            helper.doc('fillableSecondPlayer').style.display = 'inline-block';
+            helper.doc('sortable').style.display = 'inline-block';
+            helper.doc('sortableSecondPlayer').style.display = 'inline-block';
 
             puzzleGame.stepsNumber = 0;
             puzzleGame.stepsNumberSecondPlayer = 0;
@@ -223,6 +244,12 @@
             helper.doc('numStepBox').style.textAlign = 'center';
             helper.doc('numStepBoxSecondPlayer').style.display = '';
             helper.doc('numStepBoxSecondPlayer').style.textAlign = 'center';
+            helper.doc('originalImageBox').style.display = 'inline-block';
+            helper.doc('originalImageBoxSecondPlayer').style.display = 'inline-block';
+            helper.doc('fillable').style.display = 'inline-block';
+            helper.doc('fillableSecondPlayer').style.display = 'inline-block';
+            helper.doc('sortable').style.display = 'inline-block';
+            helper.doc('sortableSecondPlayer').style.display = 'inline-block';
 
             puzzleGame.clock();
 

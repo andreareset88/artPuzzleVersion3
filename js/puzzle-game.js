@@ -1,8 +1,10 @@
-var timer;
+let timer;
 
-var puzzleGame = {
+let puzzleGame = {
     stepsNumber: 0,
     stepsNumberSecondPlayer: 0,
+    winsFirstPlayer: 0,
+    winsSecondPlayer: 0,
     startTime: new Date().getTime(),
     startGame: function (images, gridSize, user1, user2) {
 
@@ -24,14 +26,22 @@ var puzzleGame = {
 
     setValuesForEndGame: function (spanName, value) {
         let endGameSpanNodes = document.getElementById('endGame').getElementsByTagName('span');
+        let endGameScoreSpanNodes = document.getElementById('endGameScore').getElementsByTagName('span');
 
         let endGameSpanNodesLength = endGameSpanNodes.length;
+        let endGameScoreSpanNodesLength = endGameScoreSpanNodes.length;
 
         for (let currentItem=0; currentItem<endGameSpanNodesLength; currentItem++){
             let currentSpan = endGameSpanNodes[currentItem];
             if (currentSpan.id == spanName){
                 currentSpan.innerHTML = value;
             }
+        }
+
+        for (let currentItem=0; currentItem<endGameScoreSpanNodesLength; currentItem++){
+            let currentSpan = endGameScoreSpanNodes[currentItem];
+            if (currentSpan.id == spanName)
+                currentSpan.innerHTML = value;
         }
     },
 
@@ -128,11 +138,16 @@ var puzzleGame = {
                     helper.doc('stepPanel').innerHTML = incrementedStep;
 
                     if (isImageSorted(valuesId)) {
+
+                        puzzleGame.winsFirstPlayer++;
+
                         this.setValuesForEndGame('winner', user1.toString());
                         this.setValuesForEndGame('imageTitle', image.title);
                         this.setValuesForEndGame('imageDescription', image.description);
                         this.setValuesForEndGame('timerEnd', (parseInt((now - puzzleGame.startTime) / 1000, 10)));
                         this.setValuesForEndGame('stepEnd', incrementedStep);
+                        this.setValuesForEndGame('scoreFirst', puzzleGame.winsFirstPlayer);
+                        this.setValuesForEndGame('scoreSecond', puzzleGame.winsSecondPlayer);
 
                         helper.doc('showEndGame').innerHTML = helper.doc('endGame').innerHTML;
                         helper.doc('showEndGame').style.removeProperty("display");
@@ -152,6 +167,19 @@ var puzzleGame = {
                         document.getElementById('currentTimeBox').setAttribute('style', 'display:none');
                         document.getElementById('numStepBox').setAttribute('style', 'display:none');
                         document.getElementById('numStepBoxSecondPlayer').setAttribute('style', 'display:none');
+
+                        if (puzzleGame.winsFirstPlayer == 2){
+                            helper.doc('showScore1').innerHTML = helper.doc('endGameScore').innerHTML;
+                            helper.doc('showScore1').style.removeProperty("display");
+                            helper.doc('showScore1').setAttribute('class', 'popupText');
+
+                            document.getElementById('originalImageBoxSecondPlayer').setAttribute('style', 'display:none');
+                            document.getElementById('sortableSecondPlayer').setAttribute('style', 'display:none');
+                            document.getElementById('fillableSecondPlayer').setAttribute('style', 'display:none');
+
+                            puzzleGame.winsFirstPlayer = 0;
+                            puzzleGame.winsSecondPlayer = 0;
+                        }
                     }
                 }
             };
@@ -177,11 +205,16 @@ var puzzleGame = {
                     helper.doc('stepPanelSecondPlayer').innerHTML = incrementedStepSecondPlayer;
 
                     if (isImageSorted(valuesIdSecondPlayer)) {
+
+                        puzzleGame.winsSecondPlayer++;
+
                         this.setValuesForEndGame('winner', user2.toString());
                         this.setValuesForEndGame('imageTitle', imageSecondPlayer.title);
                         this.setValuesForEndGame('imageDescription', imageSecondPlayer.description);
                         this.setValuesForEndGame('timerEnd', (parseInt((now - puzzleGame.startTime) / 1000, 10)));
                         this.setValuesForEndGame('stepEnd', incrementedStepSecondPlayer);
+                        this.setValuesForEndGame('scoreFirst', puzzleGame.winsFirstPlayer);
+                        this.setValuesForEndGame('scoreSecond', puzzleGame.winsSecondPlayer);
 
                         helper.doc('showEndGameSecondPlayer').innerHTML = helper.doc('endGame').innerHTML;
                         helper.doc('showEndGameSecondPlayer').style.removeProperty("display");
@@ -201,6 +234,19 @@ var puzzleGame = {
                         document.getElementById('currentTimeBox').setAttribute('style', 'display:none');
                         document.getElementById('numStepBox').setAttribute('style', 'display:none');
                         document.getElementById('numStepBoxSecondPlayer').setAttribute('style', 'display:none');
+
+                        if (puzzleGame.winsSecondPlayer == 2){
+                            helper.doc('showScore2').innerHTML = helper.doc('endGameScore').innerHTML;
+                            helper.doc('showScore2').style.removeProperty("display");
+                            helper.doc('showScore2').setAttribute('class', 'popupText');
+
+                            document.getElementById('originalImageBox').setAttribute('style', 'display:none');
+                            document.getElementById('sortable').setAttribute('style', 'display:none');
+                            document.getElementById('fillable').setAttribute('style', 'display:none');
+
+                            puzzleGame.winsFirstPlayer = 0;
+                            puzzleGame.winsSecondPlayer = 0;
+                        }
                     }
                 }
             };
