@@ -143,7 +143,7 @@
     informazioni (relative all'immagine) da usare durante la partita (ad esempio, descrizione e titolo). -->
     <?php
 
-        $connection = mysqli_connect('localhost', 'artpuzzle', '', 'my_artpuzzle'); // Establishing Connection with Server
+        $connection = mysqli_connect('localhost', 'artpuzzle', '', 'my_artpuzzle'); // Creazione connessione con server
         if (mysqli_connect_errno()) {
             echo "Failed to connect to MySQL: " . mysqli_connect_error();
         }
@@ -197,24 +197,11 @@
 
         function start() {
             
-            helper.doc('showEndGame').style.display = 'none';
-            helper.doc('showEndGameSecondPlayer').style.display = 'none';
-            helper.doc('sortable').style.display = 'inline';
-            helper.doc('sortableSecondPlayer').style.display = 'inline';
+            setParametersForStart();
+
             helper.doc('stepPanel').innerHTML = 0;
             helper.doc('stepPanelSecondPlayer').innerHTML = 0;
-            helper.doc('currentTimeBox').style.display = '';
-            helper.doc('currentTimeBox').style.textAlign = 'center';
-            helper.doc('numStepBox').style.display = '';
-            helper.doc('numStepBox').style.textAlign = 'center';
-            helper.doc('numStepBoxSecondPlayer').style.display = '';
-            helper.doc('numStepBoxSecondPlayer').style.textAlign = 'center';
-            helper.doc('originalImageBox').style.display = 'inline-block';
-            helper.doc('originalImageBoxSecondPlayer').style.display = 'inline-block';
-            helper.doc('fillable').style.display = 'inline-block';
-            helper.doc('fillableSecondPlayer').style.display = 'inline-block';
-            helper.doc('sortable').style.display = 'inline-block';
-            helper.doc('sortableSecondPlayer').style.display = 'inline-block';
+
 
             puzzleGame.stepsNumber = 0;
             puzzleGame.stepsNumberSecondPlayer = 0;
@@ -234,22 +221,7 @@
 
         function changeThePhoto() {
 
-            helper.doc('showEndGame').style.display = 'none';
-            helper.doc('showEndGameSecondPlayer').style.display = 'none';
-            helper.doc('sortable').style.display = 'inline';
-            helper.doc('sortableSecondPlayer').style.display = 'inline';
-            helper.doc('currentTimeBox').style.display = '';
-            helper.doc('currentTimeBox').style.textAlign = 'center';
-            helper.doc('numStepBox').style.display = '';
-            helper.doc('numStepBox').style.textAlign = 'center';
-            helper.doc('numStepBoxSecondPlayer').style.display = '';
-            helper.doc('numStepBoxSecondPlayer').style.textAlign = 'center';
-            helper.doc('originalImageBox').style.display = 'inline-block';
-            helper.doc('originalImageBoxSecondPlayer').style.display = 'inline-block';
-            helper.doc('fillable').style.display = 'inline-block';
-            helper.doc('fillableSecondPlayer').style.display = 'inline-block';
-            helper.doc('sortable').style.display = 'inline-block';
-            helper.doc('sortableSecondPlayer').style.display = 'inline-block';
+            setParametersForStart();
 
             puzzleGame.clock();
 
@@ -268,6 +240,25 @@
         function showRules() {
             let popup = document.getElementById("popupRules");
             popup.classList.toggle("show");
+        }
+
+        function setParametersForStart() {
+            helper.doc('showEndGame').style.display = 'none';
+            helper.doc('showEndGameSecondPlayer').style.display = 'none';
+            helper.doc('sortable').style.display = 'inline';
+            helper.doc('sortableSecondPlayer').style.display = 'inline';
+            helper.doc('currentTimeBox').style.display = '';
+            helper.doc('currentTimeBox').style.textAlign = 'center';
+            helper.doc('numStepBox').style.display = '';
+            helper.doc('numStepBox').style.textAlign = 'center';
+            helper.doc('numStepBoxSecondPlayer').style.display = '';
+            helper.doc('numStepBoxSecondPlayer').style.textAlign = 'center';
+            helper.doc('originalImageBox').style.display = 'inline-block';
+            helper.doc('originalImageBoxSecondPlayer').style.display = 'inline-block';
+            helper.doc('fillable').style.display = 'inline-block';
+            helper.doc('fillableSecondPlayer').style.display = 'inline-block';
+            helper.doc('sortable').style.display = 'inline-block';
+            helper.doc('sortableSecondPlayer').style.display = 'inline-block';
         }
 
     </script>
