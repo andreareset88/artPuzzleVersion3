@@ -33,9 +33,8 @@ let puzzleGame = {
 
         for (let currentItem=0; currentItem<endGameSpanNodesLength; currentItem++){
             let currentSpan = endGameSpanNodes[currentItem];
-            if (currentSpan.id == spanName){
+            if (currentSpan.id == spanName)
                 currentSpan.innerHTML = value;
-            }
         }
 
         for (let currentItem=0; currentItem<endGameScoreSpanNodesLength; currentItem++){
@@ -88,8 +87,8 @@ let puzzleGame = {
             sortableLi.style.backgroundImage = 'url(' + image.src + ')';
             sortableLi.style.backgroundSize = (gridSize * 100) + '%';
 
-            /* La griglia con i pezzi di immagine sparsi viene posizionata nella
-            * stessa ascissa di fillable, ma in ordinata differente  (è più in basso) */
+            /* La griglia con i pezzi d'immagine sparsi viene posizionata nella
+            * stessa ascissa di fillable, ma in ordinata differente (è più in basso) */
             sortableLi.style.backgroundPosition = posX + ' ' + posYVerticalShift;
             sortableLi.setAttribute('draggable', 'true');
 
@@ -116,6 +115,10 @@ let puzzleGame = {
             sortableLiSecondPlayer.setAttribute('data-value', sortableLiSecondPlayerId);
             sortableLiSecondPlayer.style.backgroundImage = 'url(' + imageSecondPlayer.src + ')';
             sortableLiSecondPlayer.style.backgroundSize = (gridSize * 100) + '%';
+
+            /* La griglia con i pezzi sparsi del secondo giocatore viene posizionata con
+            * la stessa ascissa della fillableSecondPlayer e la stessa ordinata della
+            * sortable (è alla stessa altezza di quest'ultima e sotto a fillableSecondPlayer) */
             sortableLiSecondPlayer.style.backgroundPosition = posXHorizontalShift + ' ' + posYVerticalShift;
             sortableLiSecondPlayer.setAttribute('draggable', 'true');
 

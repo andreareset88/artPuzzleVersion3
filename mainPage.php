@@ -15,6 +15,8 @@
     <link href="css/mediaScreenBig.css" rel="stylesheet">
     <link href="css/mediaScreenSmall.css" rel="stylesheet">
     <link href="css/mediaScreenSmaller.css" rel="stylesheet">
+    <link href="css/mediaScreenSmallest.css" rel="stylesheet">
+    <link href="css/mediaScreenMini.css" rel="stylesheet">
     <link href="css/mediaScreenMinimum.css" rel="stylesheet">
 
 </head>
@@ -32,7 +34,7 @@
 
     <hr/>
 
-    <div id="mainPanel" style="padding: 5px; display: none">
+    <div id="mainPanel" style="padding: 5px; display: block">
 
         <!-- Ciascun giocatore ha 2 griglie, quella di partenza (sortable) con l'immagine spezzettata,
         quella di destinazione (fillable) dove inserire i quadratini selezionati-->
@@ -107,6 +109,10 @@
             Reload
         </button>
 
+        <button id="addImage" type="button" class="btn" onclick="location.href='addImage.php'">
+            Aggiungi
+        </button>
+
     </div>
 
 
@@ -176,12 +182,11 @@
         window.onload = function () {
             puzzleGame.startGame(images, gridSize, "<?php echo strtoupper($_POST['user1']) ?>", "<?php echo strtoupper($_POST['user2']) ?>");
 
-            /* Al primo caricamento della pagine vengono rese non visualizzabili le informazioni
+            /* Al primo caricamento della pagina vengono rese non visualizzabili le informazioni
              riguardanti la partita stessa: numero di passi eseguiti e tempo di gioco.*/
             helper.doc('currentTimeBox').style.display = 'none';
             helper.doc('numStepBox').style.display = 'none';
             helper.doc('numStepBoxSecondPlayer').style.display = 'none';
-            helper.doc('startGame').style.display = 'inline';
 
             /*Al primo caricamento della pagina, vengono disabilitate tutte le operazioni sulle griglie,
               verranno abilitate al momento dell'effettivo inizio della partita.*/
