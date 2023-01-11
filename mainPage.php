@@ -75,7 +75,11 @@
     </div>
 
     <div id="currentTimeBox" class="playingPanel">
-        Tempo impiegato: <span id="timerPanel"></span> secondi
+        Tempo impiegato: <span id="timerPanel1"></span> secondi
+    </div>
+
+    <div id="currentTimeBoxSecondPlayer" class="playingPanel" style="text-align: center">
+        Tempo impiegato: <span id="timerPanel2"></span> secondi
     </div>
 
     <div id="numStepBox" class="playingPanel">
@@ -93,8 +97,8 @@
             <span class="popupText" id="popupRules">
                     I 2 giocatori si sfidano nel comporre un puzzle che rappresenta la ricostruzione
                 dell'immagine proposta dal gioco. La partita tiene traccia del tempo impiegato:
-                il primo giocatore che completa il puzzle vince la partita, visualizzando una breve
-                descrizione dell'opera alla destra del puzzle.
+                il giocatore che completa il puzzle nel minor tempo possibile vince la partita,
+                visualizzando una breve descrizione dell'opera.
                 Il tempo trascorso viene visualizzato nella parte inferiore della schermata.
                 Entrambi i giocatori possono richiedere di cambiare l'immagine da ricomporre.
                 Vince la partita chi arriva primo a 2 vittorie (al meglio di 3).
@@ -110,7 +114,7 @@
         </button>
 
         <button id="addImage" type="button" class="btn" onclick="location.href='addImage.php'">
-            Aggiungi
+            Aggiungi opera
         </button>
 
     </div>
@@ -185,6 +189,7 @@
             /* Al primo caricamento della pagina vengono rese non visualizzabili le informazioni
              riguardanti la partita stessa: numero di passi eseguiti e tempo di gioco.*/
             helper.doc('currentTimeBox').style.display = 'none';
+            helper.doc('currentTimeBoxSecondPlayer').style.display = 'none';
             helper.doc('numStepBox').style.display = 'none';
             helper.doc('numStepBoxSecondPlayer').style.display = 'none';
 
@@ -206,11 +211,13 @@
 
             helper.doc('stepPanel').innerHTML = 0;
             helper.doc('stepPanelSecondPlayer').innerHTML = 0;
+            helper.doc('currentTimeBoxSecondPlayer').style.display = 'none';
 
 
+            puzzleGame.clock1();
             puzzleGame.stepsNumber = 0;
             puzzleGame.stepsNumberSecondPlayer = 0;
-            puzzleGame.clock();
+            // puzzleGame.clock();
             
             for (let j=0; j<gridSize*gridSize; j++){
                 document.getElementById('S'.concat(j.toString())).setAttribute('draggable', 'true');
@@ -228,7 +235,9 @@
 
             setParametersForStart();
 
-            puzzleGame.clock();
+            helper.doc('currentTimeBoxSecondPlayer').style.display = 'none';
+
+            puzzleGame.clock1();
 
             for (let j=0; j<gridSize*gridSize; j++){
                 document.getElementById('S'.concat(j.toString())).setAttribute('draggable', 'true');
@@ -248,6 +257,7 @@
         }
 
         function setParametersForStart() {
+            helper.doc('player2').style.display = 'none'
             helper.doc('showEndGame').style.display = 'none';
             helper.doc('showEndGameSecondPlayer').style.display = 'none';
             helper.doc('sortable').style.display = 'inline';

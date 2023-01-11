@@ -9,7 +9,7 @@
     <h2>Si raccomanda d'inserire immagini di dimensione 300x300 (si consiglia
     l'utilizzo di <a href="https://www.iloveimg.com/resize-image">questo sito</a> per
     effettuare una resize dell'immagine).</h2>
-    <form action="insert.php" method="post">
+    <form action="insert.php" method="post" style="font-size: large">
 
         <p>
             <label for="operaTitle">Titolo:</label>
@@ -40,9 +40,9 @@
             <input type="text" name="located_at_path" id="path">
         </p>
 
-        <input type="submit" value="Submit">
+        <input type="submit" value="Carica">
 
-        <button id="back" type="button" onclick="location.href='mainPage.php'">
+        <button id="back" type="button" onclick="location.href='index.html'">
             Indietro
         </button>
     </form>
