@@ -40,9 +40,6 @@
         quella di destinazione (fillable) dove inserire i quadratini selezionati-->
         <div id="player1">
 
-            <span id="showScore2" class="popupText">
-                </span>
-
             <ul id="fillable" class="fillable"></ul>
 
             <div id="originalImageBox">
@@ -56,9 +53,6 @@
         </div>
 
         <div id="player2">
-
-            <span id="showScore1" class="popupText">
-                </span>
 
             <div id="originalImageBoxSecondPlayer">
                 <img id="originalImageSecondPlayer" width="300" height="300"/>

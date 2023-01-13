@@ -9,6 +9,32 @@
 <center>
     <?php
 
+    $ftp_server = "ftp.artpuzzle.altervista.org";
+    $ftp_username = "artpuzzle";
+    $ftp_password = "YHWH3KCr2FCY";
+
+    // Restituisce il filename temporaneo del file in cui viene memorizzato sul server
+    // il file caricato
+    $file = $_FILES['file']['tmp_name'];
+    // Restituisce il nome originale del file da caricare
+    $remote_file = $_FILES['file']['name'];
+    // connection_id è l'handler
+    $connection_id = ftp_connect($ftp_server);
+
+    $login_result = ftp_login($connection_id, $ftp_username, $ftp_password);
+
+    if ((!$connection_id) || (!$login_result)) {
+        die("Connessione FTP fallita...");
+    }
+
+    if (ftp_put($connection_id, $remote_file, $file, FTP_BINARY)) {
+        echo "file caricato con successo";
+    } else
+        echo "caricamento del file fallito";
+
+    // Chiudi connessione FTP
+    ftp_close($connection_id);
+
     $conn = mysqli_connect("localhost", "artpuzzle", "", "my_artpuzzle");
 
     // Check connection

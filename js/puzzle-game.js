@@ -5,8 +5,6 @@ let puzzleGame = {
     initializeGame: function () {
         this.stepsNumber = 0;
         this.stepsNumberSecondPlayer = 0;
-        this.winsFirstPlayer = 0;
-        this.winsSecondPlayer = 0;
         this.startTimeFirstPlayer = new Date().getTime();
         this.startTimeSecondPlayer = new Date().getTime();
         this.timeFirstPlayer = 0;
@@ -37,7 +35,6 @@ let puzzleGame = {
 
     setValuesForEndGame: function (spanName, value) {
         this.setEndGameValues(spanName, value, 'endGame');
-        this.setEndGameValues(spanName, value, 'endGameScore');
     },
 
     setEndGameValues: function (spanName, value, endGameId) {
@@ -71,8 +68,6 @@ let puzzleGame = {
         this.setValuesForEndGame('imageDescription', image.description);
         this.setValuesForEndGame('timerEnd', timePlayer);
         this.setValuesForEndGame('stepEnd', incrementedStep);
-        this.setValuesForEndGame('scoreFirst', puzzleGame.winsFirstPlayer);
-        this.setValuesForEndGame('scoreSecond', puzzleGame.winsSecondPlayer);
     },
 
     setShowEndGame: function (showEndGame) {
@@ -113,8 +108,6 @@ let puzzleGame = {
 
                 if (isImageSorted(valuesId)) {
 
-                    puzzleGame.winsFirstPlayer++;
-
                     puzzleGame.timeFirstPlayer = parseInt((now - puzzleGame.startTimeFirstPlayer) / 1000, 10);
 
                     helper.doc('currentTimeBox').style.display = 'none';
@@ -150,8 +143,6 @@ let puzzleGame = {
                 helper.doc('stepPanelSecondPlayer').innerHTML = puzzleGame.incrementedStepSecondPlayer;
 
                 if (isImageSorted(valuesIdSecondPlayer)) {
-
-                    puzzleGame.winsSecondPlayer++;
 
                     puzzleGame.timeSecondPlayer = parseInt((now - puzzleGame.startTimeSecondPlayer) / 1000, 10);
 

@@ -130,7 +130,7 @@ body {
     vertical-align: top;
 }
 
-#collage #currentTimeBox {
+#collage #currentTimeBox, #collage #currentTimeBoxSecondPlayer {
     text-align: center;
     margin-top: 20px;
     margin-bottom: 10px;
