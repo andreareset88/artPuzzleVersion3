@@ -21,6 +21,9 @@
 
 </head>
 
+<!-- PRENDENDO LE IMMAGINI DAL DATABASE ONLINE, L'APPLICAZIONE NON FUNZIONA SE ESEGUITA IN LOCALE.
+     PER UTILIZZARLA RECARSI AL LINK http://artpuzzle.altervista.org/ -->
+
 <body class="bg-info">
 
 <p id="noContent">Attenzione, il dispositivo non è supportato: larghezza troppo limitata

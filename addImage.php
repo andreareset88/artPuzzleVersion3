@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Store Data</title>
+    <title>Caricamento file</title>
 </head>
 <body style="background-color: burlywood">
 <center>
@@ -36,6 +36,11 @@
         <p>
             <label for="file">Seleziona un file da caricare:</label>
             <input type="file" name="file" id="file">
+        </p>
+
+        <p>
+            <label for="path">Path:</label>
+            <input type="text" name="located_at_path" id="path">
         </p>
 
         <input type="submit" value="Carica">
