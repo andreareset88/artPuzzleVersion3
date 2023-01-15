@@ -32,7 +32,7 @@
 <div id="collage">
 
     <?php
-    echo "<h3>" . "Benvenuti " . strtoupper($_POST['user1']) . " e " . strtoupper($_POST['user2']) . " al Puzzle Game</h3>";
+    echo "<h3>" . "Benvenuti " . strtoupper($_POST['user1']) . " e " . strtoupper($_POST['user2']) . " all'Art Puzzle</h3>";
     ?>
 
     <hr/>

@@ -86,7 +86,6 @@ let puzzleGame = {
         document.getElementById('numStepBoxSecondPlayer').setAttribute('style', 'display:none');
     },
 
-
     manageFirstPlayer: function (fillableLi, sortableLi) {
         fillableLi.ondragstart = (event) => event.dataTransfer.setData('data', event.target.id);
         sortableLi.ondragstart = (event) => event.dataTransfer.setData('data', event.target.id);
@@ -278,6 +277,8 @@ let puzzleGame = {
 
 isImageSorted = (idsList) =>
     idsList.every((id, index) => {
+        // Ogni elemento nell'array ha il suo id e l'indice all'interno dell'array: ognuno deve
+        // essere nella posizione corretta, quindi l'id deve coincidere con l'indice
         return id == index;
     });
 

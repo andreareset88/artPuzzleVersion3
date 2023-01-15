@@ -2,13 +2,15 @@
 <html lang="en">
 <head>
     <title>Caricamento file</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 </head>
 <body style="background-color: burlywood">
 <center>
     <h1>Aggiunta immagini al Database</h1>
-    <h2>Si raccomanda d'inserire immagini di dimensione 300x300 (si consiglia
-    l'utilizzo di <a href="https://www.iloveimg.com/resize-image">questo sito</a> per
-    effettuare una resize dell'immagine).</h2>
+    
+    <h2>Nel campo path, si raccomanda di digitare: images/nomefile.estensione</h2>
     <form action="insert.php" method="post" style="font-size: large" enctype="multipart/form-data">
 
         <p>
